@@ -3,52 +3,52 @@ from typing import Optional, List
 from datetime import datetime
 
 class WheelSpecificationFields(BaseModel):
-    treadDiameterNew:Optional[str]=None
+    treadDiameterNew:Optional[str] None
     lastShopIssueSize:Optional[str]=None
-    condemningDia:Optional[str]=None
+    condemningDia:Optional[str]= None
     wheelGauge:Optional[str]=None
-    variationSameAxle:Optional[str]=None
+    variationSameAxle:Optional[str] =None
     variationSameBogie:Optional[str]=None
     variationSameCoach:Optional[str]=None
-    wheelProfile:Optional[str]=None
+    wheelProfile:Optional[str] =None
     intermediateWWP:Optional[str]=None
-    bearingSeatDiameter:Optional[str]=None
+    bearingSeatDiameter:Optional[str] =None
     rollerBearingOuterDia:Optional[str]=None
-    rollerBearingBoreDia:Optional[str]=None
+    rollerBearingBoreDia:Optional[str] =None
     rollerBearingWidth:Optional[str]=None
-    axleBoxHousingBoreDia:Optional[str]=None
-    wheelDiscWidth:Optional[str]=None
+    axleBoxHousingBoreDia:Optional[str]= None
+    wheelDiscWidth:Optional[str]= None
 
 class WheelSpecificationCreate(BaseModel):
-    formNumber:str=Field(..., description="unique form number")
+    formNumber: str=Field(..., description="unique form number")
     submittedBy:str=Field(..., description="user id of who submitted")
-    submittedDate:str=Field(..., description="submission date")
-    fields:WheelSpecificationFields
+    submittedDate :str=Field(..., description="submission date")
+    fields :WheelSpecificationFields
 
 class WheelSpecificationResponse(BaseModel):
-    formNumber:str
+    formNumber: str
     submittedBy:str
     submittedDate:str
     status:str
 
 class WheelSpecificationFieldsPartial(BaseModel):
-    treadDiameterNew:Optional[str]=None
+    treadDiameterNew:Optional[str] =None
     lastShopIssueSize:Optional[str]=None
-    condemningDia:Optional[str]=None
-    wheelGauge:Optional[str]=None
+    condemningDia:Optional[str]= None
+    wheelGauge:Optional[str]= None
 
 class WheelSpecificationGet(BaseModel):
-    formNumber:str
+    formNumber: str
     submittedBy:str
-    submittedDate:str
+    submittedDate: str
     fields:WheelSpecificationFieldsPartial
 
 class BogieDetails(BaseModel):
-    bogieNo:str
-    makerYearBuilt:str
-    incomingDivAndDate:str
-    deficitComponents:str
-    dateOfIOH:str
+    bogieNo :str
+    makerYearBuilt: str
+    incomingDivAndDate :str
+    deficitComponents: str
+    dateOfIOH: str
 
 class BogieChecksheetDetails(BaseModel):
     bogieFrameCondition:str
@@ -59,14 +59,14 @@ class BogieChecksheetDetails(BaseModel):
 
 class BmbcChecksheetDetails(BaseModel):
     cylinderBody:str
-    pistonTrunnion:str
+    pistonTrunnion :str
     adjustingTube:str
-    plungerSpring:str
+    plungerSpring :str
 
 class BogieChecksheetCreate(BaseModel):
-    formNumber:str=Field(..., description="unique form number")
-    inspectionBy:str=Field(..., description="user id of inspector")
-    inspectionDate:str=Field(..., description="inspection date")
+    formNumber:str=Field(..., description= "unique form number")
+    inspectionBy:str=Field(..., description ="user id of inspector")
+    inspectionDate:str=Field(..., description ="inspection date")
     bogieDetails:BogieDetails
     bogieChecksheet:BogieChecksheetDetails
     bmbcChecksheet:BmbcChecksheetDetails
@@ -78,9 +78,9 @@ class BogieChecksheetResponse(BaseModel):
     status:str
 
 class StandardResponse(BaseModel):
-    success:bool
+    success: bool
     message:str
-    data:Optional[dict]=None
+    data:Optional[dict]= None
 
 class WheelSpecStandardResponse(BaseModel):
     success:bool
@@ -88,7 +88,7 @@ class WheelSpecStandardResponse(BaseModel):
     data:WheelSpecificationResponse
 
 class BogieCheckStandardResponse(BaseModel):
-    success:bool
+    success :bool
     message:str
     data:BogieChecksheetResponse
 
