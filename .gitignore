@@ -10,6 +10,8 @@ env/
 .env
 .env.local
 
+create_tables.py
+
 *.db
 *.sqlite3
 
